@@ -5,11 +5,11 @@ pipeline {
  agent any 
   stages {
     
-     stage('Checkout'){    
-       steps {
-          sh "git checkout ${env.BRANCH_NAME}"               
-       }
-     }
+     stage('Checkout code') {
+        steps {
+            checkout scm
+        }
+    }
      stage('Sonar') {
             steps {
                sh "whoami"
